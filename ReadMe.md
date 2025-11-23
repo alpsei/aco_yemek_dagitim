@@ -26,6 +26,53 @@ aco_yemek_dagitim/
 └── core/
     ├── ant_algorithm.py    # Karınca Kolonisi Algoritması (NumPy tabanlı)
     └── haversine.py        # Kuş uçuşu mesafe hesaplama modülü
-
-
+```
 ## Kurulum ve Çalıştırma
+Projeyi bilgisayarınızda çalıştırmak için aşağıdaki adımları izleyin:
+## 1. Projeyi İndirin:
+```text
+git clone https://github.com/alpsei/aco_yemek_dagitim
+cd aco_yemek_dagitim
+```
+## 2. Sanal Ortamı Oluşturun ve Aktif Edin:
+```text
+Windows için:
+
+python -m venv venv
+.\venv\Scripts\activate
+
+Mac/Linux için:
+
+python3 -m venv venv
+source venv/bin/activate
+```
+## 3. Gerekli Kütüphaneleri Yükleyin:
+```text
+pip install -r requirements.txt
+```
+## 4. API Anahtarını Ayarlayın: Proje ana dizininde .env adında bir dosya oluşturun ve içine Google Maps API anahtarınızı ekleyin:
+```text
+GOOGLE_MAPS_API_KEY=SIZIN_ANAHTARINIZ_BURAYA
+```
+(Not: API Key girilmezse sistem otomatik olarak Kuş Uçuşu modunda çalışır.)
+
+## 5. Uygulamayı Başlatın:
+```text
+streamlit run main.py
+```
+## Algoritma Parametreleri
+* **Karınca Sayısı:** Her iterasyonda yola çıkan ajan sayısı.
+* **İterasyon:** Algoritmanın kaç döngü çalışacağı.
+* **Alpha (Feromon):** Karıncaların kokuya verdiği önem (Tecrübe).
+* **Beta (Mesafe):** Karıncaların yolun kısalığına verdiği önem (Açgözlülük).
+* **Decay (Buharlaşma):** Her tur sonunda feromonların silinme oranı (0.1 - 0.99).
+
+## Kullanılan Teknolojiler
+* Python 3.x
+* Streamlit: Web Arayüzü
+* NumPy: Matris Hesaplamaları
+* Google Maps API: Mesafe ve Rota Verisi
+* Folium: Harita Görselleştirme
+* Matplotlib: Grafik Çizimi
+
+**Uyarı:** Bu proje eğitim amaçlıdır. .env dosyası .gitignore dosyasına eklenerek API anahtarının GitHub'a yüklenmesi engellenmelidir.
